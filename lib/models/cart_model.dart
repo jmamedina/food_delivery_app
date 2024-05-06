@@ -1,0 +1,53 @@
+// Cart Model
+// カートモデル
+import 'package:food_delivery/models/products_model.dart';
+
+class CartModel {
+  int? id;
+  String? name;
+  int? price;
+  String? img;
+  int? quantity;
+  bool? isExist;
+  String? time;
+  ProductModel? product;
+
+  CartModel({
+    this.id,
+    this.name,
+    this.price,
+    this.img,
+    this.quantity,
+    this.isExist,
+    this.time,
+    this.product,
+  });
+
+  // Deserialize JSON to object
+  // JSONをオブジェクトに逆シリアル化
+  CartModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    price = json['price'];
+    img = json['img'];
+    quantity = json['quantity'];
+    isExist = json['isExist'];
+    time = json['time'];
+    product = ProductModel.fromJson(json['product']);
+  }
+
+  // Serialize object to JSON
+  // オブジェクトをJSONにシリアル化
+  Map<String, dynamic> toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "price": this.price,
+      "img": this.img,
+      "quantity": this.quantity,
+      "isExist": this.isExist,
+      "time": this.time,
+      "product": this.product!.toJson(),
+    };
+  }
+}
