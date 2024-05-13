@@ -33,4 +33,7 @@ The Flutter app communicates with the backend food delivery system through API c
 Contributions are welcome! Feel free to submit pull requests or open issues for any improvements or bug fixes.
 
 ## Post request flow
-![alt text](image.png)
+![alt text](post_flow.png)
+
+## initial architecture 
+![alt text](initial_architecture.png)
